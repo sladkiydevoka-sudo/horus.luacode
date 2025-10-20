@@ -486,3 +486,25 @@ Section1:Button({
     }, function(value)
 loadstring(game:HttpGet("https://pastefy.app/Qc1ZIUwO/raw", true))()
     end)
+Section1:Toggle({
+    Title = "noclip",
+    Description = "mini bypass",
+    Default = false
+    }, function(value)
+loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))();
+        Section1:Toggle({
+    Title = "teleport(soon)",
+    Description = "tp to player",
+    Default = false
+    }, function(value)
+        Section1:Toggle({
+    Title = "invis",
+    Description = "cant fire",
+    Default = false
+    }, function(value)
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invisible-script-20557"))()
+        Section1:Toggle({
+    Title = "auto fire(out 19.11.2025)",
+    Description = "auto fire",
+    Default = false
+    }, function(value)
