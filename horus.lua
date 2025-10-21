@@ -491,10 +491,11 @@ Section1:Toggle({
     Description = "mini bypass",
     Default = false
     }, function(value)
+		Section1:Button({
 loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))();
     Title = "invis",
     Description = "cant fire",
     Default = false
     }, function(value)
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invisible-script-20557"))()
-        
+    
