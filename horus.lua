@@ -486,10 +486,3 @@ Section1:Button({
     }, function(value)
 loadstring(game:HttpGet("https://pastefy.app/Qc1ZIUwO/raw", true))()
     end)
-Section1:Toggle({
-    Title = "noclip",
-    Description = "mini bypass",
-    Default = false
-    }, function(value)
-loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))()
-    
