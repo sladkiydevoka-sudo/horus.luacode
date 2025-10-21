@@ -497,8 +497,4 @@ loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))();
     Default = false
     }, function(value)
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invisible-script-20557"))()
-        Section1:Toggle({
-    Title = "auto fire(out 19.11.2025)",
-    Description = "auto fire",
-    Default = false
-    }, function(value)
+        
