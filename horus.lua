@@ -492,12 +492,6 @@ Section1:Toggle({
     Default = false
     }, function(value)
 loadstring(game:HttpGet("https://pastebin.com/raw/piukyETa"))();
-        Section1:Toggle({
-    Title = "teleport(soon)",
-    Description = "tp to player",
-    Default = false
-    }, function(value)
-        Section1:Toggle({
     Title = "invis",
     Description = "cant fire",
     Default = false
