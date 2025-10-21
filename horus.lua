@@ -1,39 +1,125 @@
-local UILib = loadstring(game:HttpGet('https://raw.githubusercontent.com/StepBroFurious/Script/main/HydraHubUi.lua'))()
-local Window = UILib.new("Grand Piece Online", game.Players.LocalPlayer.UserId, "horusware")
-local Category1 = Window:Category("Main", "http://www.roblox.com/asset/?id=8395621517")
-local SubButton1 = Category1:Button("rage", "http://www.roblox.com/asset/?id=8395747586")
-local Section1 = SubButton1:Section("Section", "Left")
-Section1:Button({
-    Title = "anti-hit",
-    ButtonName = "Tap!",
-    Description = "desync body",
-    }, function(value)
-    --[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-setfflag("WorldStepMax", "-99999999999999")
-wait(1)
+--https://docs.sirius.menu/rayfield
 
-queue_on_teleport([[
-    wait(3.5)
-    setfflag("WorldStepMax", "-1")
-]])
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
-end)
-Section1:Toggle({
-    Title = "miranda hub",
-    Description = "miranda has got tween up and inf jump",
-    Default = false
-    }, function(value)
-    loadstring(game:HttpGet("https://pastefy.app/JJVhs3rK/raw"))()
-end)
-Section1:Toggle({
-    Title = "teleport walk",
-    Description = "speed 0.1-100000000",
-    Default = false
-    }, function(value)
-        local Players = game:GetService("Players")
+
+
+local Window = Rayfield:CreateWindow({
+
+   Name = "horusovv",
+
+   Icon = 0, -- Use 0 for no icon
+
+   LoadingTitle = "Loading..",
+
+   LoadingSubtitle = "by horus",
+
+   ShowText = "Rayfield", -- for mobile users to unhide rayfield, change if you'd like
+
+   Theme = "Default",
+
+
+
+   ToggleUIKeybind = "K",
+
+
+
+   DisableRayfieldPrompts = false,
+
+   DisableBuildWarnings = false,
+
+
+
+   ConfigurationSaving = {
+
+      Enabled = true,
+
+      FolderName = nil,
+
+      FileName = "Big Hub"
+
+   },
+
+
+
+   Discord = {
+
+      Enabled = false,
+
+      Invite = "noinvitelink",
+
+      RememberJoins = true
+
+   },
+
+
+
+   KeySystem = true,
+
+   KeySettings = {
+
+      Title = "Example Key",
+
+      Subtitle = "Key System",
+
+      Note = "you can get key on discord server",
+
+      FileName = "Key",
+
+      SaveKey = false,
+
+      GrabKeyFromSite = false,
+
+      Key = {"7728"}
+
+   }
+
+})
+
+
+
+local Tab = Window:CreateTab("rage", 4483362458) -- Title, Image
+
+
+
+Rayfield:Notify({
+
+   Title = "Greetings",
+
+   Content = "enjoy",
+
+   Duration = 6.5,
+
+   Image = "home",
+
+})
+
+
+
+local Button = Tab:CreateButton({
+
+   Name = "tp up and inf jump",
+
+   Callback = function()
+
+      loadstring(game:HttpGet("https://pastefy.app/JJVhs3rK/raw"))()
+   end,
+
+})
+
+
+
+local Toggle = Tab:CreateToggle({
+
+   Name = "teleportwalk",
+
+   CurrentValue = false,
+
+   Flag = "Toggle1",
+
+   Callback = function(Value)
+
+      local Players = game:GetService("Players")
 
 local RunService = game:GetService("RunService")
 
@@ -460,11 +546,17 @@ local function setMinimized(state)
     end
 
 end
+
+
+
 MinBtn.MouseButton1Click:Connect(function()
 
     setMinimized()
 
 end)
+
+
+
 MinOverlay.MouseButton1Click:Connect(function()
 
     if minimized then
@@ -474,15 +566,64 @@ MinOverlay.MouseButton1Click:Connect(function()
     end
 
 end)
+
+
+
 SpeedBox.Text = savedSpeed
 
 Content.Visible = true
-    end)
+   end,
 
-Section1:Button({
-    Title = "float",
-    ButtonName = "Tap!",
-    Description = "lol",
-    }, function(value)
+})
+
+
+local Button = Tab:CreateButton({
+
+   Name = "float",
+
+   Callback = function()
 loadstring(game:HttpGet("https://pastefy.app/Qc1ZIUwO/raw", true))()
-    end)
+   end,
+
+})
+
+
+local Keybind = Tab:CreateKeybind({
+
+   Name = "Keybind Example",
+
+   CurrentKeybind = "Q",
+
+   HoldToInteract = false,
+
+   Flag = "Keybind1",
+
+   Callback = function(Keybind)
+
+      -- Runs when keybind is pressed or released
+
+      print("Keybind active:", Keybind)
+
+   end,
+
+})
+
+
+
+local Button = Tab:CreateButton({
+
+   Name = "desync",
+
+   Callback = function()
+setfflag("WorldStepMax", "-99999999999999")
+wait(1)
+
+queue_on_teleport([[
+    wait(3.5)
+    setfflag("WorldStepMax", "-1")
+]])
+
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
+   end,
+
+})
